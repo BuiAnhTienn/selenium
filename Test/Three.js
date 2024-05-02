@@ -1,5 +1,8 @@
-const assert = require('assert');
 const { Builder, Browser, until, By, Key } = require("selenium-webdriver");
+const assert = require('assert');
+import {should} from 'chai';
+
+
 
 (async function Exemple(){
     let driver = await new Builder().forBrowser(Browser.CHROME).build();
@@ -18,9 +21,12 @@ const { Builder, Browser, until, By, Key } = require("selenium-webdriver");
         let todoText = await driver.findElement(By.className('sc-cHPgQl beJFeL')).getText().then(function(value){
             return value;
         })
-
-        assert.strictEqual(todoText,'Tên sản phẩm')
-
+        // using assert
+       // assert.strictEqual(todoText,'Tên sản phẩm')
+        
+        // using assert chaijs should
+        should();
+        todoText.should.equal('Tên sản phẩm')
     }finally{
         await driver.quit()
     }
