@@ -1,11 +1,12 @@
 const { Builder, Browser, until, By, Key } = require("selenium-webdriver");
 var should = require("chai").should();
 
-describe("add test ne",  () => {
-  it("testcase", async () => {
+describe("test", () => {
+  it("2", async () => {
     let driver = await new Builder().forBrowser(Browser.CHROME).build();
+
     try {
-      await driver.get("https://staging-clinic.gpet.com.vn");
+      await driver.get("https://staging-clinic.gpet.com.vn/sell/goods");
       await driver.wait(
         until.elementLocated(By.id("normal_login_email")),
         3000
@@ -19,8 +20,8 @@ describe("add test ne",  () => {
         .findElement(By.xpath('//*[@id="normal_login_password"]/input'))
         .sendKeys("hongvien", Key.RETURN);
 
-      await driver.wait(until.titleIs("Phòng Của Tiến"), 4000);
-      await driver.sleep(5000)
+      await driver.wait(until.titleIs("Phòng Của Tiến"), 3000);
+      await driver.sleep(3000);
       let todoText = await driver
         .findElement(By.className("sc-cHPgQl beJFeL"))
         .getText()

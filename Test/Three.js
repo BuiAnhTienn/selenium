@@ -1,7 +1,7 @@
 const { Builder, Browser, until, By, Key } = require("selenium-webdriver");
 const assert = require('assert');
-import {should} from 'chai';
 
+var should = require('chai').should();
 
 
 (async function Exemple(){
@@ -25,7 +25,7 @@ import {should} from 'chai';
        // assert.strictEqual(todoText,'Tên sản phẩm')
         
         // using assert chaijs should
-        should();
+        
         todoText.should.equal('Tên sản phẩm')
     }finally{
         await driver.quit()
