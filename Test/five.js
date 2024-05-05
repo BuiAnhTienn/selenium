@@ -2,7 +2,7 @@ const { Builder, Browser, until, By, Key } = require("selenium-webdriver");
 var should = require("chai").should();
 
 describe("add test ne",  () => {
-  it("testcase", async () => {
+  it("testcase login in to cart", async () => {
     let driver = await new Builder().forBrowser(Browser.CHROME).build();
     try {
       await driver.get("https://staging-clinic.gpet.com.vn");
